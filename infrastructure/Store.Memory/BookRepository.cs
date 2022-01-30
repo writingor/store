@@ -14,18 +14,15 @@ namespace Store.Memory
 
         public Book[] GetAllByIsbn(string isbn)
         {
-            throw new NotImplementedException();
-        }
-
-        public Book[] GetAllByTitle(string titlePart)
-        {
-            return books.Where(book => book.Title.Contains(titlePart))
+            return books.Where(book => book.Isbn == isbn)
                         .ToArray();
         }
 
-        public Book[] GetAllByTitleOrAuthor(string titleOrAuthor)
+        public Book[] GetAllByTitleOrAuthor(string query)
         {
-            throw new NotImplementedException();
+            return books.Where(book => book.Author.Contains(query)
+                                    || book.Title.Contains(query))
+                        .ToArray();
         }
     }
 }
