@@ -10,10 +10,11 @@ namespace Store.Web.Controllers
         {
             this.bookService = bookService;
         }
+        // /search/index?query=title
         public IActionResult Index(string query)
         {
             var books = bookService.GetAllByQuery(query);
-            
+            // returns the finished page
             return View(books);
         }
     }
