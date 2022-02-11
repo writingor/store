@@ -13,9 +13,13 @@ namespace Store.Web.Controllers
         // /search/index?query=title
         public IActionResult Index(string query)
         {
-            var books = bookService.GetAllByQuery(query);
-            // returns the finished page
-            return View(books);
+            if (query != null)
+            {
+                var books = bookService.GetAllByQuery(query);
+                // returns the finished page
+                return View(books);
+            }
+            return View();
         }
     }
 }

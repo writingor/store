@@ -6,7 +6,7 @@
 
 <h1>Результаты поиска</h1>
 
-@if (Model.Length == 0)
+@if (Model == null || Model.Length == 0)
 {
     <p>Ничего не найдено.</p>
 }
