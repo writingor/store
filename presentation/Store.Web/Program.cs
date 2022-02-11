@@ -15,6 +15,7 @@ builder.Services.AddSession(options =>
 });
 
 builder.Services.AddSingleton<IBookRepository, BookRepository>();
+builder.Services.AddSingleton<IOrderRepository, OrderRepository>();
 builder.Services.AddSingleton<BookService>();
 
 var app = builder.Build();
